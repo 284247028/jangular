@@ -1,15 +1,21 @@
 {
-    "name": "jangular",
-    "version": "0.0.0",
+    "name": "jeff-jangular",
+    "version": "0.0.1",
     "main": "lib/jangular.js",
     "description": "A plugin for jeff.js that allows you to render pages from server-side jeff templates that contain angular syntax.",
     "homepage": "http://jangular.com",
     "bugs": "user/repo/issues",
-    "author": {
-        "name": "Christian Allen",
-        "email": "christian@gethuman.com",
-        "url": "http://christianallen.com"
-    },
+    "author": "Christian Allen <christian@gethuman.com>",
+    "contributors": [
+        {
+            "name": "Jeff Whelpley",
+            "email": "jeff@gethuman.com"
+        },
+        {
+            "name": "Christian Allen",
+            "email": "christian@gethuman.com"
+        }
+    ],
     "repository": {
         "type": "git",
         "url": "user/repo"
