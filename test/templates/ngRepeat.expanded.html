@@ -1,0 +1,41 @@
+<ul>
+    <li ng-repeat="foo in foos">
+        <span ng-bind="foo.bar">alpha</span>
+        <ol>
+            <li data-ng-repeat="bar in foo.baz | coolFilter" ng-class="{even: $even}" class="even">
+                <span ng-bind="bar">uno</span>
+                <span ng-bind="$index">0</span>
+                <span ng-bind="$first">true</span>
+                <span ng-bind="$middle">false</span>
+                <span ng-bind="$last">false</span>
+                <span ng-bind="$odd">false</span>
+            </li>
+            <li data-ng-repeat="bar in foo.baz | coolFilter" ng-class="{even: $even}">
+                <span ng-bind="bar">dos</span>
+                <span ng-bind="$index">1</span>
+                <span ng-bind="$first">false</span>
+                <span ng-bind="$middle">false</span>
+                <span ng-bind="$last">true</span>
+                <span ng-bind="$odd">true</span>
+            </li>
+        </ol>
+    </li>
+    <li ng-repeat="foo in foos">
+        <span ng-bind="foo.bar">beta</span>
+        <ol>
+            <li data-ng-repeat="bar in foo.baz | coolFilter" ng-class="{even: $even}" class="even">
+                <span ng-bind="bar">un</span>
+                <span ng-bind="$index">0</span>
+                <span ng-bind="$first">true</span>
+                <span ng-bind="$middle">false</span>
+                <span ng-bind="$last">false</span>
+                <span ng-bind="$odd">false</span>
+            </li>
+            <li data-ng-repeat="bar in foo.baz | coolFilter" ng-class="{even: $even}">
+                <span ng-bind="bar">deux</span>
+                <span ng-bind="$index">1</span>
+                <span ng-bind="$first">false</span>
+                <span ng-bind="$middle">false</span>
+                <span ng-bind="$last">true</span>
+                <span ng-bind="$odd">true</span>
+            </li></ol></li></ul>
