@@ -45,7 +45,8 @@ var tests = ['helloworld','basic',
     {name: 'ngRepeat', model: {foos: [{bar: 'alpha', baz: ['uno','dos']},{bar: 'beta', baz: ['un','deux']}]}},
     {name: 'ngFilterBasic', model: {foo: 'Hello world', basicFilter: basicFilter}},
     {name: 'ngFilter', model: {foo: '/img/photo.png', bar: 'en.host', langFilter: langFilter, cdnFilter: cdnFilter}},
-    {name: 'ngDirectivesBasic', model: {foo: 'blah'}}
+    {name: 'ngDirectivesBasic', model: {foo: 'blah'}},
+    {name: 'ngEvalAttributes', model: {foo: 'about:foo', bar: 'about:bar'}}
 ];
 
 jangular.addShortcutsToScope(global);
