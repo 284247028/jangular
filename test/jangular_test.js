@@ -29,7 +29,7 @@ var tests = ['helloworld','basic',
     {name: 'ngBind', model: {foo: "foo's content", bar: {baz: "bar.baz's content", bam: "something else", boo: function(input) { return 'boo: ' + input; }}, blah: function(input) {
         // i'm a comment!
         return 'blah was ' + input;
-    }}},
+    }, 'nullVar': null, 'undefVar': undefined}},
     {name: 'ngBindHtml', model: {foo: "<span>foo's content</span>", bar: {baz: "<i>bar.baz's content</i>", bam: "something else"}}},
     {name: 'ngChecked', model: {foo: true, bar: '14', baz: 14}},
     {name: 'ngClass', model: {foo: 'classy', bar: '14', baz: 14}},

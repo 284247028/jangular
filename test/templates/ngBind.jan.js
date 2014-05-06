@@ -9,7 +9,9 @@ module.exports = function(model) {
                 p({"ng-bind": "foo"}, "...and I am a section with foo"),
                 p({"data-ng-bind": "bar.baz"}, "...and I am a section with bar.baz"),
                 span({'ng-bind': "blah(foo)"}),
-                span({'ng-bind': "bar.boo(foo)"})
+                span({'ng-bind': "bar.boo(foo)"}),
+                span({'ng-bind': "nullVar"}),
+                span({'ng-bind': "undefVar"})
             ])
         ])
     ]);
