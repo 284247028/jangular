@@ -36,6 +36,7 @@ var tests = ['helloworld','basic',
     {name: 'ngDisabled', model: {foo: 'classy', bar: '14', baz: 14}},
     {name: 'ngHide', model: {foo: 'classy', bar: '14', baz: 14}},
     {name: 'ngHref', model: {foo: 'about:blank', bar: '14', baz: 14}},
+    {name: 'ngIf', model: {foo: 'var'}},
     {name: 'ngInclude', model: {foo: 'about:blank', bar: __dirname + '/templates/ngHref.jan'}},
     {name: 'ngOpen', model: {foo: 'classy', bar: '14', baz: 14}},
     {name: 'ngReadonly', model: {foo: 'classy', bar: '14', baz: 14}},
@@ -112,22 +113,24 @@ for (var i = 0, len = tests.length; i < len; ++i) {
  ng-form            MAYBE
  ng-hide            YES     DONE
  ng-href            YES     DONE
- ng-if              no      NOT POSSIBLE
+ ng-if*             no      YES*
  ng-include         YES     DONE
  ng-list            LATER
  ng-model           YES     DONE
  ng-open            YES     DONE
  ng-pluralize       LATER
  ng-readonly        YES     DONE
- ng-repeat*         YES     IN PROGRESS
+ ng-repeat         YES     IN PROGRESS
  ng-selected        YES     DONE
  ng-show            YES     DONE
  ng-src             YES     DONE
  ng-srcset          YES     DONE
  ng-style           YES     DONE
- ng-switch*         no      NOT POSSIBLE
+ ng-switch*         no      YES*
  ng-transclude      LATER
  ng-value           MAYBE
+
+   *can leave a hole where DOM should be if doesn't eval to true
  */
 
 /*
