@@ -8,6 +8,8 @@ module.exports = function(model) {
         span({'eval-placeholder': 'bar'}),
         span({'eval-popover': 'foo'}),
         span({'eval-value': 'bar'}),
-        span({'eval-alt': 'foo'})
+        span({'eval-alt': 'foo'}),
+        span({'eval-title': "'just a string'"}),
+        span({'ng-if': 'false', 'eval-title': "'just another string'"})
     ];
 };

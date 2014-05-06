@@ -1,3 +1,6 @@
 module.exports = function(model) {
-    return img({'data-ng-src': 'foo | langFilter:bar | cdnFilter'});
+    return div([
+        img({'data-ng-src': 'foo | langFilter:bar | cdnFilter'}),
+        span({'eval-title': "'words' | cdnFilter"})
+    ]);
 };
