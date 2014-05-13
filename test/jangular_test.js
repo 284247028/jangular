@@ -5,23 +5,46 @@ var jangular = require('../lib/jangular.js'),
     jangularGetTemplate = null,
     directiveTemplates = null;
 
-var basicFilter = function(input, repeat) {
-    var repeats = ['filtered'];
-    if ( repeat && (repeat = parseInt(repeat,10)) ) {
-        while( repeat-- ) {
-            repeats.push('filtered');
+var filters = {
+    basicFilter: function(input, repeat) {
+        var repeats = ['filtered'];
+        if ( repeat && (repeat = parseInt(repeat,10)) ) {
+            while( repeat-- ) {
+                repeats.push('filtered');
+            }
         }
+        return input + ' ' + repeats.join(' ');
+    },
+    langFilter: function(input, lang) {
+        return lang + input;
+    },
+    cdnFilter: function(input) {
+        return 'http://cdn.' + input;
+    },
+    translateFilter: function(input) {
+        return input + ' is translated!';
     }
-    return input + ' ' + repeats.join(' ');
 };
-var langFilter = function(input, lang) {
-    return lang + input;
-};
-var cdnFilter = function(input) {
-    return 'http://cdn.' + input;
-};
+
 var directives = {
-    'gh-directive-name': 'answers.home'
+    'gh-directive-name': 'answers.home',
+    'gh-replace': {
+        type: 'replace',
+        path: 'test.replace'
+    },
+    'gh-translate': {
+        type: 'bindAndFilter',
+        filters: [
+            filters.translateFilter
+        ]
+    },
+    'gh-src': {
+        type: 'attributeAndFilter',
+        filters: [
+            filters.cdnFilter
+        ],
+        attribute: 'src'
+    }
 };
 
 var tests = ['helloworld','basic',
@@ -47,19 +70,24 @@ var tests = ['helloworld','basic',
     {name: 'ngStyle', model: {foo: 'red', bar: '14', baz: 14}},
     {name: 'ngRepeatBasic', model: {foos: ['alpha','beta']}},
     {name: 'ngRepeat', model: {foos: [{bar: 'alpha', baz: ['uno','dos']},{bar: 'beta', baz: ['un','deux']}]}},
-    {name: 'ngFilterBasic', model: {foo: 'Hello world', basicFilter: basicFilter}},
-    {name: 'ngFilter', model: {foo: '/img/photo.png', bar: 'en.host', langFilter: langFilter, cdnFilter: cdnFilter}},
+    {name: 'ngFilterBasic', model: {foo: 'Hello world', basicFilter: filters.basicFilter}},
+    {name: 'ngFilter', model: {foo: '/img/photo.png', bar: 'en.host', langFilter: filters.langFilter, cdnFilter: filters.cdnFilter}},
     {name: 'ngDirectivesBasic', model: {foo: 'blah'}},
+    {name: 'ngDirectives', model: {foo: 'localhost'}},
     {name: 'ngEvalAttributes', model: {foo: 'about:foo', bar: 'about:bar'}},
     {name: 'ngPluralize', model: {foo: 1, bar: 4, baz: 0}}
+
 ];
 
 jangular.addShortcutsToScope(global);
 
 jangularGetTemplate = jangular.getTemplate;
 directiveTemplates = {
-    'answers.home': jangularGetTemplate(__dirname + '/templates/' + 'ngDirectivesBasicDirective' + '.jan')
+    'answers.home': jangularGetTemplate(__dirname + '/templates/' + 'ngDirectivesBasicDirective' + '.jan'),
+    'test.replace': jangularGetTemplate(__dirname + '/templates/' + 'ngDirectivesTestReplace' + '.jan')
 };
+
+jangular.addFilters(filters);
 jangular.addDirectives(directives);
 
 jangular.init({
