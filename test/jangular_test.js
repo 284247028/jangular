@@ -131,31 +131,31 @@ for (var i = 0, len = tests.length; i < len; ++i) {
  ======== Angular directives that need to be handled ========
  http://docs.angularjs.org/api
 
- ng-bind            YES     DONE
- ng-bind-html       YES     DONE
+ ng-bind            YES     DONE            BOOTSLAP
+ ng-bind-html       YES     DONE            BOOTSLAP
  ng-bind-template   no      NOT POSSIBLE
- ng-checked         YES     DONE
- ng-class           YES     DONE
- ng-class-even      LATER
- ng-class-odd       LATER
- ng-disabled        YES     DONE
+ ng-checked         YES     DONE            BOOTSLAP
+ ng-class           YES     DONE            BOOTSLAP
+ ng-class-even      LATER                   BOOTSLAP
+ ng-class-odd       LATER                   BOOTSLAP
+ ng-disabled        YES     DONE            BOOTSLAP
  ng-form            MAYBE
- ng-hide            YES     DONE
- ng-href            YES     DONE
- ng-if*             no      YES*
- ng-include         YES     DONE
+ ng-hide            YES     DONE            BOOTSLAP
+ ng-href            YES     DONE            BOOTSLAP
+ ng-if*             no      YES*            BOOTSLAP?
+ ng-include         YES     DONE            not possible
  ng-list            LATER
- ng-model           YES     DONE
- ng-open            YES     DONE
- ng-pluralize       LATER
- ng-readonly        YES     DONE
- ng-repeat         YES     IN PROGRESS
- ng-selected        YES     DONE
- ng-show            YES     DONE
- ng-src             YES     DONE
- ng-srcset          YES     DONE
- ng-style           YES     DONE
- ng-switch*         no      YES*
+ ng-model           YES     DONE            BOOTSLAP*
+ ng-open            YES     DONE            BOOTSLAP
+ ng-pluralize       LATER                   BOOTSLAP
+ ng-readonly        YES     DONE            BOOTSLAP
+ ng-repeat          YES     DONE
+ ng-selected        YES     DONE            BOOTSLAP
+ ng-show            YES     DONE            BOOTSLAP
+ ng-src             YES     DONE            BOOTSLAP
+ ng-srcset          YES     DONE            BOOTSLAP
+ ng-style           YES     DONE            BOOTSLAP
+ ng-switch*         no      YES*            BOOTSLAP?
  ng-transclude      LATER
  ng-value           MAYBE
 
