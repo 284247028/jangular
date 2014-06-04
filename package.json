@@ -4,7 +4,6 @@
   "main": "lib/jangular.js",
   "description": "A plugin for jeff.js that allows you to render pages from server-side jeff templates that contain angular syntax.",
   "homepage": "http://jangular.com",
-  "bugs": "user/repo/issues",
   "author": "Christian Allen <christian@gethuman.com>",
   "contributors": [
     {
@@ -24,9 +23,6 @@
     {
       "type": "MIT"
     }
-  ],
-  "files": [
-    ""
   ],
   "keywords": [
     "jeff",
