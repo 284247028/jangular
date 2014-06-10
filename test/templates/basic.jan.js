@@ -7,6 +7,9 @@ module.exports = function(model) {
         head([
             title("I am a title")
         ]),
-        body("and body is here")
+        body(
+            p("body is here"),
+            input({type: 'text', 'ng-model': 'foo'})
+        )
     ]);
 }

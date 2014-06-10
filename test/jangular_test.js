@@ -47,7 +47,8 @@ var directives = {
     }
 };
 
-var tests = ['helloworld','basic',
+var tests = ['helloworld',
+    {name: 'basic', model: {foo: 'hello'}},
     {name: 'model', model: {foo: "foo's content", bar: {baz: "bar.baz's content", bam: "something else"}}},
     {name: 'ngBind', model: {foo: "foo's content", bar: {baz: "bar.baz's content", bam: "something else", boo: function(input) { return 'boo: ' + input; }}, blah: function(input) {
         // i'm a comment!
