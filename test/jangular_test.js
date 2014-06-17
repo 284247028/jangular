@@ -28,6 +28,7 @@ var filters = {
 
 var directives = {
     'gh-directive-name': 'answers.home',
+    'gh-simple': 'test.replace',
     'gh-replace': {
         type: 'replace',
         path: 'test.replace'
