@@ -7,6 +7,7 @@ module.exports = function(model) {
         div({'ng-bind': 'foo'}),
         div({'ui-view': null},
             span({'ng-bind': 'foo'})
-        )
+        ),
+        div({'ng-bind': 'foo'})
     );
 }
