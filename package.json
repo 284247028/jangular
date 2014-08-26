@@ -1,6 +1,6 @@
 {
   "name": "jeff-jangular",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "main": "lib/jangular.js",
   "description": "A plugin for jeff.js that allows you to render pages from server-side jeff templates that contain angular syntax.",
   "homepage": "http://jangular.com",
