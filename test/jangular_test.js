@@ -76,7 +76,7 @@ var tests = ['helloworld',
     {name: 'ngFilter', model: {foo: '/img/photo.png', bar: 'en.host', langFilter: filters.langFilter, cdnFilter: filters.cdnFilter}},
     {name: 'ngDirectivesBasic', model: {foo: 'blah'}},
     {name: 'ngDirectives', model: {foo: 'localhost'}},
-    {name: 'ngEvalAttributes', model: {foo: 'about:foo', bar: 'about:bar'}},
+    //{name: 'ngEvalAttributes', model: {foo: 'about:foo', bar: 'about:bar'}},
     {name: 'ngPluralize', model: {foo: 1, bar: 4, baz: 0}},
     {name: 'ngUiView', model: {foo: 'blah'}}
 ];
