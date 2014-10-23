@@ -1,6 +1,6 @@
 {
   "name": "jeff-jangular",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "main": "lib/jangular.js",
   "description": "A plugin for jeff.js that allows you to render pages from server-side jeff templates that contain angular syntax.",
   "homepage": "http://jangular.com",
@@ -35,16 +35,16 @@
     "angular server"
   ],
   "devDependencies": {
-    "grunt-contrib-jshint": "~0.7.0",
-    "grunt-contrib-nodeunit": "~0.2.0",
-    "grunt-contrib-watch": "~0.5.0",
-    "load-grunt-tasks": "~0.2.0",
-    "time-grunt": "~0.2.0",
-    "jshint-stylish": "~0.1.3",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-nodeunit": "~0.4.1",
+    "grunt-contrib-watch": "~0.6.1",
+    "load-grunt-tasks": "~0.6.0",
+    "time-grunt": "~1.0.0",
+    "jshint-stylish": "~1.0.0",
     "mean-logger": "0.0.1"
   },
   "dependencies": {
-    "jeff-core": "^0.1.12"
+    "jeff-core": "^0.1.13"
   },
   "scripts": {
     "test": "grunt"
