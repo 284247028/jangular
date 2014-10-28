@@ -1,52 +1,27 @@
 {
-  "name": "jeff-jangular",
-  "version": "0.0.26",
+  "name": "jangular",
+  "version": "0.1.3",
+  "description": "JavaScript based templating engine for Angular",
   "main": "lib/jangular.js",
-  "description": "This library has moved to jangular (no jeff- prefix).",
-  "homepage": "http://jangular.com",
-  "author": "Christian Allen <christian@gethuman.com>",
-  "contributors": [
-    {
-      "name": "Jeff Whelpley",
-      "email": "jeff@gethuman.com"
-    },
-    {
-      "name": "Christian Allen",
-      "email": "christian@gethuman.com"
-    }
-  ],
   "repository": {
     "type": "git",
-    "url": "user/repo"
+    "url": "git://github.com/gethuman/jangular.git"
   },
-  "licenses": [
-    {
-      "type": "MIT"
-    }
-  ],
   "keywords": [
-    "jeff",
-    "angular",
-    "angular template",
-    "templating",
-    "javascript template",
-    "jeff.js",
-    "angular.js",
-    "angular server"
+    "javascript",
+    "template"
   ],
-  "devDependencies": {
-    "grunt-contrib-jshint": "~0.10.0",
-    "grunt-contrib-nodeunit": "~0.4.1",
-    "grunt-contrib-watch": "~0.6.1",
-    "load-grunt-tasks": "~0.6.0",
-    "time-grunt": "~1.0.0",
-    "jshint-stylish": "~1.0.0",
-    "mean-logger": "0.0.1"
+  "author": "Jeff Whelpley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gethuman/jangular/issues"
   },
+  "homepage": "https://github.com/gethuman/jangular",
   "dependencies": {
-    "jeff-core": "^0.1.13"
+    "jyt": "^0.1.3"
   },
-  "scripts": {
-    "test": "grunt"
+  "devDependencies": {
+    "gulp": "^3.8.9",
+    "taste": "^0.1.3"
   }
 }

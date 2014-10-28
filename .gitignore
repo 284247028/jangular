@@ -1,12 +1,7 @@
-.idea
-node_modules
-bower_components
-build
+.DS_Store
+node_modules/
+temp/
+coverage
 test/coverage
-config/env.js
-newrelic_agent.log
+npm-debug.log
 coverage.html
-dist
-temp
-coverage.html
-poop.log
