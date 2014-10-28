@@ -1,8 +1,8 @@
 {
   "name": "jeff-jangular",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "main": "lib/jangular.js",
-  "description": "A plugin for jeff.js that allows you to render pages from server-side jeff templates that contain angular syntax.",
+  "description": "This library has moved to jangular (no jeff- prefix).",
   "homepage": "http://jangular.com",
   "author": "Christian Allen <christian@gethuman.com>",
   "contributors": [
