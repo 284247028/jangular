@@ -1,6 +1,6 @@
 {
   "name": "jangular",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "JavaScript based templating engine for Angular",
   "main": "lib/jangular.js",
   "repository": {
