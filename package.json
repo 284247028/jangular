@@ -1,6 +1,6 @@
 {
   "name": "jangular",
-  "version": "0.1.46",
+  "version": "0.1.47",
   "description": "JavaScript based templating engine for Angular",
   "main": "lib/jangular.js",
   "repository": {
@@ -18,12 +18,12 @@
   },
   "homepage": "https://github.com/gethuman/jangular",
   "dependencies": {
-    "jyt": "^0.1.50",
+    "gulp": "^3.8.11",
+    "jyt": "^0.1.51",
     "lodash": "^3.2.0"
   },
   "devDependencies": {
     "batter": "0.0.15",
-    "gulp": "^3.8.11",
     "taste": "^0.1.48"
   }
 }
