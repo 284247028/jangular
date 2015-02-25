@@ -19,11 +19,11 @@
   "homepage": "https://github.com/gethuman/jangular",
   "dependencies": {
     "gulp": "^3.8.11",
-    "jyt": "^0.1.54",
+    "jyt": "^0.1.55",
     "lodash": "^3.3.1"
   },
   "devDependencies": {
-    "batter": "0.0.19",
+    "batter": "0.0.20",
     "taste": "^0.1.51"
   }
 }
