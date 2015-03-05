@@ -4,7 +4,8 @@ Jangular
 
 This library can be used to render Angular 1.x templates on the server or command line.
 Note that only the Angular core directives which are used for initial page rendering
-are evaluated by Jangular. If you have any custom directives, you simply need to make
+are evaluated by Jangular ([see the list of directives supported](https://github.com/gethuman/jangular/tree/master/lib/directives)).
+If you have any custom directives, you simply need to make
 Jangular aware of them before you render.
 
 Note that this library is in beta and should not be used in production...yet. Pull
@@ -158,7 +159,9 @@ This library can be used by itself to do simple Angular rendering, but if you ar
 interested in how this can be used for a full app, check out [pancakes.js](https://github.com/gethuman/pancakes)
 and the [pancakes-angular plugin](https://github.com/gethuman/pancakes-angular) plugin.
 To see how pancakes-angular is used, check out the
-[sample pancakes project](https://github.com/gethuman/pancakes-sample).
+[sample pancakes project](https://github.com/gethuman/pancakes-sample). Just note that
+the pancakes libraries are extremely opinionated and have not been tested with
+anything outside of GetHuman.
 
 ## Contributing
 
