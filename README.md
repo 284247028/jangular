@@ -10,9 +10,6 @@ Jangular aware of them before you render.
 Note that this library is in beta and should not be used in production...yet. Pull
 requests are welcome.
 
-## Installation
-
-
 ## Command Line Usage
 
 The best way to play around with Jangular is to use the command line tool. First install
@@ -48,7 +45,11 @@ file that has a module.exports.
 
 * -t or --tpl - These is your Angular template. Either pass in the template html or a path to your template
 * -d or --data - The scope to use when you start evaluating. Either JSON or a path to a JSON or JS file
-* -s or --strip - When you include this option, all Angular directives will be stripped out of template after evaluating. See below for more explaination of why this is useful.
+* -s or --strip - When you include this option, all Angular binding directives will be stripped out of template after evaluating.
+
+The reason why strip is in there is that sometime you want the server side to
+produce HTML without any Angular binding directives so that when Angular bootstraps, it does
+not prematurally modify the rendered HTML.
 
 ## Code Usage
 
@@ -142,6 +143,14 @@ jangular.addFilters([
     myFilter: function (array) {}
 ])
 ```
+
+## Known Issues
+
+One thing is that if you use the {{ }} expression syntax, Jangular will replace the
+expression with the value. This may cause an issue if you are having the Angular
+client take over because Angular will just see the evaluated value and not the
+expression. For this reason, for now, we strongly suggest using ng-bind instead
+of {{ }} within inner HTML.
 
 ## Pancakes
 
