@@ -153,6 +153,13 @@ client take over because Angular will just see the evaluated value and not the
 expression. For this reason, for now, we strongly suggest using ng-bind instead
 of {{ }} within inner HTML.
 
+## Use Cases
+
+The primary use case for Jangular is when you are working on a consumer facing
+app where visitors come from external links, search results and/or ads. In that case,
+the initial page load performance has a big impact on bounce rate (the rate at which
+users leave your site after one page view) and thus your search ranking.
+
 ## Pancakes
 
 This library can be used by itself to do simple Angular rendering, but if you are
