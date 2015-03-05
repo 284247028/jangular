@@ -356,8 +356,26 @@ describe('UNIT ' + name, function () {
             actual.should.equal(expected);
         });
     });
-});
 
+    describe('htmlToObject()', function () {
+        it('should convert a simple div to an object with promise', function (done) {
+            target.htmlToObject('<div></div>', null)
+                .then(function (jytObj) {
+                    taste.should.exist(jytObj);
+                    jytObj.should.have.property('tag').that.equals('div');
+                    done();
+                });
+        });
+
+        it('should convert a simple div to an object with promise', function (done) {
+            target.htmlToObject('<div></div>', function (err, jytObj) {
+                taste.should.exist(jytObj);
+                jytObj.should.have.property('tag').that.equals('div');
+                done();
+            });
+        });
+    });
+});
 
 /*
  ======== Angular directives that need to be handled ========

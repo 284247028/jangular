@@ -70,11 +70,21 @@ example of doing this that you can adapt to meet your needs.
 ```
 var fs = require('fs');
 var html = fs.readFileSync(__dirname + '/something.html');
+
+// either pass in callback
 jangular.htmlToObject(html, function (err, jangularDom) {
-
     // use jangularDom (see below)
-
 });
+
+// or you can use promises
+jangular.htmlToObject(html)
+    .then(function (jangularDom) {
+        // use jangularDom (see below)
+    })
+    .catch(function (err) {
+        // do something here for error
+    });
+
 ```
 
 As an alternative, you can write your HTML with [Jyt](https://github.com/gethuman/jyt)
