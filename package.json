@@ -29,5 +29,7 @@
     "batter": "0.0.21",
     "taste": "^0.1.52"
   },
-  "bin": {}
+  "bin": {
+    "jangular": "lib/jangular.batch.js"
+  }
 }
