@@ -12,16 +12,17 @@ requests are welcome.
 
 ## Installation
 
-From the command line enter:
-
-```
-npm install jangular --save
-```
 
 ## Command Line Usage
 
-The best way to play around with Jangular is to use the command line tool. Once you
-complete installation, try out some of these commands to get started:
+The best way to play around with Jangular is to use the command line tool. First install
+Jangular globally:
+
+```
+npm install jangular -g
+```
+
+Then try out some of these commands to get started:
 
 ```
 jangular -t '<div>{{ foo }}</div>' -d '{ "foo": "hello, world" }'
@@ -50,6 +51,12 @@ file that has a module.exports.
 * -s or --strip - When you include this option, all Angular directives will be stripped out of template after evaluating. See below for more explaination of why this is useful.
 
 ## Code Usage
+
+From the command line enter:
+
+```
+npm install jangular --save
+```
 
 In your Node.js code, you first need to require jangular:
 
