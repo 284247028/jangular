@@ -3,13 +3,9 @@ Jangular
 ==========
 
 This library can be used to render Angular 1.x templates on the server or command line.
-Note that only the Angular core directives which are used for initial page rendering
-are evaluated by Jangular ([see the list of directives supported](https://github.com/gethuman/jangular/tree/master/lib/directives)).
-If you have any custom directives, you simply need to make
-Jangular aware of them before you render.
 
 Note that this library is in beta and should not be used in production...yet. Pull
-requests are welcome.
+requests are welcome!
 
 ## Command Line Usage
 
@@ -109,10 +105,22 @@ var html = jangular.render(jangularDom, data);
 
 Now you have the rendered HTML.
 
-## Custom Directives
+## How it Works
 
-If you have a custom directive you want to have evaluated, you register it
-with Jangular like this:
+The input into the main render() function for this library is an Angular template and a JSON object
+that contains the scope data used to render the template. The render() function has the following
+steps:
+
+1. Translate template from HTML to an object. This object is a tree structure that represents the DOM.
+1. Traverse the tree and for each node/element:
+    1. Use $parse from Angular core to evaluate expressions
+    1. Run the link() method of any directives on the element (more on this below)
+1. After traversal complete and transforms done, translate the DOM-like object to an HTML string.
+
+#### Directives
+
+This library includes support for [many of the Angular core directives](https://github.com/gethuman/jangular/tree/master/lib/directives)
+but if you have a custom directive you want to have evaluated, you register it with Jangular like this:
 
 ```
 jangular.addDirective('my-foo', function (scope, element, attrs) {
@@ -120,22 +128,33 @@ jangular.addDirective('my-foo', function (scope, element, attrs) {
 });
 ```
 
-Then you use the directive like this:
+Note that you can use more than just the link() function for directives by simply doing something like this:
+
+```
+
+// myDirective defined somewhere else
+
+jangular.addDirective('my-foo', function (scope, element, attrs) {
+
+    // do something else here for example isolating scope:
+    var isolateScope = angular.copy(scope);
+
+    // then call the directive link
+    myDirective.link(isolateScope, element, attrs);
+});
+```
+
+Jangular is built to be unopinionated so it is up to you to figure out how you are storing directives
+and feeding them into Jangular. An example of how we at GetHuman use this is in
+[our pancakes-angular library](https://github.com/gethuman/pancakes-angular/blob/master/lib/middleware/jng.directives.js#L356).
+
+Once you have registered a directive, you can reference it as an attribute like this:
 
 ```
 var template = '<div my-foo></div>
 ```
 
-I have not had time to implement all directive features on the server side.
-For now, until I can add more features, the server side directive supports:
-
-* Only changes in the link() function
-* Only attribute directives
-* No transclusion
-
-I would welcome pull requests!
-
-## Filters
+#### Filters
 
 You can add filters that are used as your template is rendered by doing:
 
@@ -181,6 +200,16 @@ gulp test --cov=true
 ```
 
 Here are some of the things on the ToDo list:
+
+
+I have not had time to implement all directive features on the server side.
+For now, until I can add more features, the server side directive supports:
+
+* Only changes in the link() function
+* Only attribute directives
+* No transclusion
+
+I would welcome pull requests!
 
 * All directive options (i.e. element directive, isolated scope, etc.)
 * Directive transclusion
