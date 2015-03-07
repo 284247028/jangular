@@ -123,30 +123,19 @@ This library includes support for [many of the Angular core directives](https://
 but if you have a custom directive you want to have evaluated, you register it with Jangular like this:
 
 ```
-jangular.addDirective('my-foo', function (scope, element, attrs) {
-    // this is the equivalent to a client side directive link() function
+jangular.addDirective('my-foo', function transform(scope, element, attrs) {
+    // you can either modify the element here or return a band new element
 });
 ```
 
-Note that you can use more than just the link() function for directives by simply doing something like this:
-
-```
-
-// myDirective defined somewhere else
-
-jangular.addDirective('my-foo', function (scope, element, attrs) {
-
-    // do something else here for example isolating scope:
-    var isolateScope = angular.copy(scope);
-
-    // then call the directive link
-    myDirective.link(isolateScope, element, attrs);
-});
-```
-
-Jangular is built to be unopinionated so it is up to you to figure out how you are storing directives
-and feeding them into Jangular. An example of how we at GetHuman use this is in
+It is up to you to define your own server side "directives". The way I suggest using this
+is to come up with a vanilla JavaScript object format that represents once of your
+"components" then write generic code to take your custom component objects and either
+transpile them into directives on the client side or into these jangular.addDirective()
+calls on the server side. An example of how we do something like this at GetHuman use this is in
 [our pancakes-angular library](https://github.com/gethuman/pancakes-angular/blob/master/lib/middleware/jng.directives.js#L356).
+Just note that the pancakes-angular library is much more unstable than this library so you may
+want to just see how that works and create your own version.
 
 Once you have registered a directive, you can reference it as an attribute like this:
 
@@ -201,16 +190,7 @@ gulp test --cov=true
 
 Here are some of the things on the ToDo list:
 
-
-I have not had time to implement all directive features on the server side.
-For now, until I can add more features, the server side directive supports:
-
-* Only changes in the link() function
-* Only attribute directives
-* No transclusion
-
-I would welcome pull requests!
-
-* All directive options (i.e. element directive, isolated scope, etc.)
-* Directive transclusion
+* Update to Angular 1.4 $parse
+* An easier way to register directives
+* Directive transclusion (requires modifications to traversal algorithm)
 * Angular2 branch
