@@ -2,6 +2,8 @@
 Jangular
 ==========
 
+[![Join the chat at https://gitter.im/gethuman/jangular](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/gethuman/jangular?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 This library can be used to render Angular 1.x templates on the server or command line.
 
 Note that this library is in beta and should not be used in production...yet. Pull
