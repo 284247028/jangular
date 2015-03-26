@@ -342,6 +342,30 @@ describe('UNIT ' + name, function () {
             actual.should.equal(expected);
         });
 
+        it('should test ngSwitch', function () {
+            var elem = div({'ng-switch': null, 'on': 'foo'},
+                div({'ng-switch-when': 'zoom'},'Was zoom!'),
+                div({'ng-switch-when': 'boom'},'Was boom!'),
+                div({'ng-switch-default': null},'Was nada.')
+            );
+            var model = {foo: 'zoom', bar: '14'};
+            var expected = '<div ng-switch on="foo"><div ng-switch-when="zoom">Was zoom!</div></div>';
+            var actual = target.render(elem, model);
+            actual.should.equal(expected);
+        });
+
+        it('should test ngSwitchDefault', function () {
+            var elem = div({'ng-switch': null, 'on': 'foo'},
+                div({'ng-switch-when': 'zoom'},'Was zoom!'),
+                div({'ng-switch-when': 'boom'},'Was boom!'),
+                div({'ng-switch-default': null},'Was nada.')
+            );
+            var model = {foo: 'shazam!', bar: '14'};
+            var expected = '<div ng-switch on="foo"><div ng-switch-default>Was nada.</div></div>';
+            var actual = target.render(elem, model);
+            actual.should.equal(expected);
+        });
+
         it('should test ngUiView', function () {
             var elem = body(
                 div({'ng-bind': 'foo'}),
