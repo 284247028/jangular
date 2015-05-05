@@ -398,6 +398,14 @@ describe('UNIT ' + name, function () {
                 done();
             });
         });
+
+        it('should convert a div with an html comment to a tag', function (done) {
+            target.htmlToObject('<div><!-- hello, world --></div>', function (err, jytObj) {
+                taste.should.exist(jytObj);
+                jytObj.should.have.property('tag').that.equals('div');
+                done();
+            });
+        });
     });
 });
 
