@@ -303,6 +303,16 @@ describe('UNIT ' + name, function () {
             actual.should.equal(expected);
         });
 
+        it('should test ngRepeatSameElement nested', function () {
+            var elem = ul([
+                li({'ng-repeat': 'foo in foos', 'ng-bind': 'bar[foo].bam'})
+            ]);
+            var model = {foos: ['alpha', 'beta'], bar: {alpha: {bam: 'holy crap!'}, beta: {bam: 'whoa'}}};
+            var expected = '<ul><li ng-repeat="foo in foos" ng-bind="bar[foo].bam">holy crap!</li><li ng-repeat="foo in foos" ng-bind="bar[foo].bam">whoa</li></ul>';
+            var actual = target.render(elem, model);
+            actual.should.equal(expected);
+        });
+
         it('should test ngRepeat', function () {
             var elem = ul([
                 li({'ng-repeat': 'foo in foos'}, [
