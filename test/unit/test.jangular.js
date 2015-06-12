@@ -107,6 +107,21 @@ describe('UNIT ' + name, function () {
             actual.should.equal(expected);
         });
 
+        it('should test ngBind with object', function () {
+            var elem = div({'ng-bind': 'foo[bar].bam'});
+            var model = {
+                foo: {
+                    jam: {
+                        bam: 'holy crap!'
+                    }
+                },
+                bar: 'jam'
+            };
+            var expected = '<div ng-bind="foo[bar].bam">holy crap!</div>';
+            var actual = target.render(elem, model);
+            actual.should.equal(expected);
+        });
+
         it('should test ngBindHtml', function () {
             var elem = html([
                 head([
@@ -274,6 +289,26 @@ describe('UNIT ' + name, function () {
             ]);
             var model = {foos: ['alpha', 'beta']};
             var expected = '<ul><li ng-repeat="foo in foos"><span ng-bind="foo">alpha</span><span ng-bind="$index">0</span></li><li ng-repeat="foo in foos"><span ng-bind="foo">beta</span><span ng-bind="$index">1</span></li></ul>';
+            var actual = target.render(elem, model);
+            actual.should.equal(expected);
+        });
+
+        it('should test ngRepeatSameElement', function () {
+            var elem = ul([
+                li({'ng-repeat': 'foo in foos', 'ng-bind': 'foo'})
+            ]);
+            var model = {foos: ['alpha', 'beta']};
+            var expected = '<ul><li ng-repeat="foo in foos" ng-bind="foo">alpha</li><li ng-repeat="foo in foos" ng-bind="foo">beta</li></ul>';
+            var actual = target.render(elem, model);
+            actual.should.equal(expected);
+        });
+
+        it('should test ngRepeatSameElement nested', function () {
+            var elem = ul([
+                li({'ng-repeat': 'foo in foos', 'ng-bind': 'bar[foo].bam'})
+            ]);
+            var model = {foos: ['alpha', 'beta'], bar: {alpha: {bam: 'holy crap!'}, beta: {bam: 'whoa'}}};
+            var expected = '<ul><li ng-repeat="foo in foos" ng-bind="bar[foo].bam">holy crap!</li><li ng-repeat="foo in foos" ng-bind="bar[foo].bam">whoa</li></ul>';
             var actual = target.render(elem, model);
             actual.should.equal(expected);
         });
