@@ -44,6 +44,8 @@ describe('UNIT ' + name, function () {
         target.addFilters(filters);
     });
 
+    /* eslint no-undef:0 */
+    /* eslint block-scoped-var:0 */
     describe('render()', function () {
         it('should test basic', function () {
             var elem = html([
@@ -379,9 +381,9 @@ describe('UNIT ' + name, function () {
 
         it('should test ngSwitch', function () {
             var elem = div({'ng-switch': null, 'on': 'foo'},
-                div({'ng-switch-when': 'zoom'},'Was zoom!'),
-                div({'ng-switch-when': 'boom'},'Was boom!'),
-                div({'ng-switch-default': null},'Was nada.')
+                div({'ng-switch-when': 'zoom'}, 'Was zoom!'),
+                div({'ng-switch-when': 'boom'}, 'Was boom!'),
+                div({'ng-switch-default': null}, 'Was nada.')
             );
             var model = {foo: 'zoom', bar: '14'};
             var expected = '<div ng-switch on="foo"><div ng-switch-when="zoom">Was zoom!</div></div>';
@@ -391,9 +393,9 @@ describe('UNIT ' + name, function () {
 
         it('should test ngSwitchDefault', function () {
             var elem = div({'ng-switch': null, 'on': 'foo'},
-                div({'ng-switch-when': 'zoom'},'Was zoom!'),
-                div({'ng-switch-when': 'boom'},'Was boom!'),
-                div({'ng-switch-default': null},'Was nada.')
+                div({'ng-switch-when': 'zoom'}, 'Was zoom!'),
+                div({'ng-switch-when': 'boom'}, 'Was boom!'),
+                div({'ng-switch-default': null}, 'Was nada.')
             );
             var model = {foo: 'shazam!', bar: '14'};
             var expected = '<div ng-switch on="foo"><div ng-switch-default>Was nada.</div></div>';
@@ -428,6 +430,7 @@ describe('UNIT ' + name, function () {
 
         it('should convert a simple div to an object with promise', function (done) {
             target.htmlToObject('<div></div>', function (err, jytObj) {
+                taste.should.not.exist(err);
                 taste.should.exist(jytObj);
                 jytObj.should.have.property('tag').that.equals('div');
                 done();
@@ -436,6 +439,7 @@ describe('UNIT ' + name, function () {
 
         it('should convert a div with an html comment to a tag', function (done) {
             target.htmlToObject('<div><!-- hello, world --></div>', function (err, jytObj) {
+                taste.should.not.exist(err);
                 taste.should.exist(jytObj);
                 jytObj.should.have.property('tag').that.equals('div');
                 done();

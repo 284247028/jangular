@@ -8,6 +8,7 @@ var name        = 'jangular.engine';
 var taste       = require('taste');
 var target      = taste.target(name);
 var directives  = taste.target('jangular.directives');
+var path        = require('path');
 
 describe('UNIT ' + name, function () {
 
@@ -18,31 +19,31 @@ describe('UNIT ' + name, function () {
 
     describe('getFileContents()', function () {
         it('should get a file with a relative path', function () {
-            var path = 'test/fixtures/engine.txt';
+            var filePath = 'test/fixtures/engine.txt';
             var expected = 'this is a test';
-            var actual = target.getFileContents(path);
+            var actual = target.getFileContents(filePath);
             actual.should.equal(expected);
         });
 
         it('should do relative path with ..', function () {
-            var path = 'test/../test/fixtures/engine.txt';
+            var filePath = 'test/../test/fixtures/engine.txt';
             var expected = 'this is a test';
-            var actual = target.getFileContents(path);
+            var actual = target.getFileContents(filePath);
             actual.should.equal(expected);
         });
 
         it('should throw an error if file does not exist', function () {
-            var path = 'blahblahblah/engine.txt';
+            var filePath = 'blahblahblah/engine.txt';
             var fn = function () {
-                target.getFileContents(path);
+                target.getFileContents(filePath);
             };
             fn.should.throw(/ENOENT/);
         });
 
         it('should load a full path', function () {
-            var path = __dirname + '/../fixtures/engine.txt';
+            var filePath = path.join(__dirname, '../fixtures/engine.txt');
             var expected = 'this is a test';
-            var actual = target.getFileContents(path);
+            var actual = target.getFileContents(filePath);
             actual.should.equal(expected);
         });
     });

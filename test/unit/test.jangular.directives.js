@@ -14,7 +14,7 @@ describe('UNIT ' + name, function () {
             target.init();
             taste.should.exist(target.transforms['ng-bind-html']);
         });
-        
+
         it('should bind value', function () {
             var element = {
                 empty: taste.spy(),
