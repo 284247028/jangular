@@ -19,15 +19,15 @@
   "homepage": "https://github.com/gethuman/jangular",
   "dependencies": {
     "commander": "^2.9.0",
-    "gulp": "^3.9.0",
+    "gulp": "^3.9.1",
     "html": "0.0.10",
-    "jyt": "^0.1.106",
-    "lodash": "4.3.0",
+    "jyt": "^0.1.107",
+    "lodash": "4.5.0",
     "q": "^1.4.1"
   },
   "devDependencies": {
-    "batter": "0.1.27",
-    "taste": "^0.2.21"
+    "batter": "0.1.28",
+    "taste": "^0.2.22"
   },
   "bin": {
     "jangular": "lib/jangular.batch.js"
