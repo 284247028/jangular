@@ -21,13 +21,13 @@
     "commander": "2.9.0",
     "gulp": "3.9.1",
     "html": "0.0.10",
-    "jyt": "0.1.121",
+    "jyt": "0.1.122",
     "lodash": "4.13.1",
     "q": "1.4.1"
   },
   "devDependencies": {
-    "batter": "0.1.43",
-    "taste": "0.2.34"
+    "batter": "0.1.44",
+    "taste": "0.2.35"
   },
   "bin": {
     "jangular": "lib/jangular.batch.js"
