@@ -20,14 +20,14 @@
   "dependencies": {
     "commander": "2.9.0",
     "gulp": "3.9.1",
-    "html": "0.0.10",
-    "jyt": "0.1.124",
-    "lodash": "4.14.1",
+    "html": "1.0.0",
+    "jyt": "0.1.125",
+    "lodash": "4.15.0",
     "q": "1.4.1"
   },
   "devDependencies": {
-    "batter": "0.1.46",
-    "taste": "0.2.37"
+    "batter": "0.1.47",
+    "taste": "0.2.38"
   },
   "bin": {
     "jangular": "lib/jangular.batch.js"
