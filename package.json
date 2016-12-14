@@ -22,12 +22,12 @@
     "gulp": "3.9.1",
     "html": "1.0.0",
     "jyt": "^0.1.127",
-    "lodash": "^4.17.0",
+    "lodash": "^4.17.2",
     "q": "1.4.1"
   },
   "devDependencies": {
     "batter": "^0.1.51",
-    "taste": "^0.2.41"
+    "taste": "^0.2.42"
   },
   "bin": {
     "jangular": "lib/jangular.batch.js"
